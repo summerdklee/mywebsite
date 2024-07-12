@@ -1,8 +1,9 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "testwebsite"
+  title: "Dakyung's Portfolio"
   navbar:
     left:
       - href: index.qmd

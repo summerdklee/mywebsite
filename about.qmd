@@ -1,10 +1,9 @@
 ---
-title: "About"
+title: "About me, Dakyung."
 jupyter: python3
 ---
 
-About this site
-
-```{python}
-1 + 1
-```
+* **Call me** : Summer
+* **I'm** : OO yo
+* **I live** : in Seoul
+* **I'm studying** : Data Sience

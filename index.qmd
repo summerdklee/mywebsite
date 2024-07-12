@@ -1,11 +1,12 @@
 ---
-title: "testwebsite"
+title: "Hello! I'm Dakyung Lee."
 jupyter: python3
 ---
 
-This is a Quarto website.
+### Weolcome! 🙂
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+##### Thanks for visiting my portfolio website.
+##### Please enjoy! (..◜ᴗ◝..)
 
 ```{python}
 1 + 1
