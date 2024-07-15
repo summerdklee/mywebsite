@@ -198,7 +198,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>84p</h1>
 <section id="q1.-다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요." class="level3">
 <h3 class="anchored" data-anchor-id="q1.-다음-표의-내용을-데이터-프레임으로-만들어-출력해-보세요.">Q1. 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.</h3>
-<div id="16fd89af" class="cell" data-execution_count="1">
+<div id="c01995a4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'product'</span> : [<span class="st">'사과'</span>, <span class="st">'딸기'</span>, <span class="st">'수박'</span>],</span>
@@ -215,7 +215,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="q2.-앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해-보세요." class="level3">
 <h3 class="anchored" data-anchor-id="q2.-앞에서-만든-데이터-프레임을-이용해-과일의-가격-평균과-판매량-평균을-구해-보세요.">Q2. 앞에서 만든 데이터 프레임을 이용해 과일의 가격 평균과 판매량 평균을 구해 보세요.</h3>
-<div id="6325bd08" class="cell" data-execution_count="2">
+<div id="b2b8a02a" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>price_mean <span class="op">=</span>  <span class="bu">sum</span>(df[<span class="st">'price'</span>] <span class="op">/</span> <span class="dv">3</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sales_mean <span class="op">=</span> <span class="bu">sum</span>(df[<span class="st">'sales'</span>] <span class="op">/</span> <span class="dv">3</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -232,7 +232,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>115p</h1>
 <section id="q1.-mpg-데이터를-불러와-복사본을-만드세요." class="level3">
 <h3 class="anchored" data-anchor-id="q1.-mpg-데이터를-불러와-복사본을-만드세요.">Q1. mpg 데이터를 불러와 복사본을 만드세요.</h3>
-<div id="d14c0947" class="cell" data-execution_count="3">
+<div id="60cd4390" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pydataset</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df_mpg <span class="op">=</span> pydataset.data(<span class="st">'mpg'</span>)</span>
@@ -271,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="q2.-복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요." class="level3">
 <h3 class="anchored" data-anchor-id="q2.-복사본-데이터를-이용해-cty는-city로-hwy는-highway로-수정하세요.">Q2. 복사본 데이터를 이용해 <code>cty</code>는 <code>city</code>로, <code>hwy</code>는 <code>highway</code>로 수정하세요.</h3>
-<div id="6cf28968" class="cell" data-execution_count="4">
+<div id="e90ab6d1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_mpg_new <span class="op">=</span> df_mpg_new.rename(columns <span class="op">=</span> {<span class="st">'cty'</span> : <span class="st">'city'</span>})</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_mpg_new[<span class="st">'city'</span>])</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -307,7 +307,7 @@ Name: highway, Length: 234, dtype: int64</code></pre>
 </section>
 <section id="q3.-데이터-일부를-출력해-변수명이-바뀌었는지-확인해-보세요." class="level3">
 <h3 class="anchored" data-anchor-id="q3.-데이터-일부를-출력해-변수명이-바뀌었는지-확인해-보세요.">Q3. 데이터 일부를 출력해 변수명이 바뀌었는지 확인해 보세요.</h3>
-<div id="79d597c3" class="cell" data-execution_count="5">
+<div id="7d0ef84a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_mpg_new.head())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  manufacturer model  displ  year  cyl       trans drv  city  highway fl  \
@@ -331,7 +331,7 @@ Name: highway, Length: 234, dtype: int64</code></pre>
 <h1>130p</h1>
 <section id="q1.-midwest.csv를-불러와-데이터의-특징을-파악하세요." class="level3">
 <h3 class="anchored" data-anchor-id="q1.-midwest.csv를-불러와-데이터의-특징을-파악하세요.">Q1. <code>midwest.csv</code>를 불러와 데이터의 특징을 파악하세요.</h3>
-<div id="99627940" class="cell" data-execution_count="6">
+<div id="a1731e91" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df_mw <span class="op">=</span> pd.read_csv(<span class="st">'data/midwest.csv'</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_mw.info())</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_mw.head())</span>
@@ -490,7 +490,7 @@ max           43.312464           31.161972    1.000000
 </section>
 <section id="q2.-poptotal전체-인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정하세요." class="level3">
 <h3 class="anchored" data-anchor-id="q2.-poptotal전체-인구-변수를-total로-popasian아시아-인구-변수를-asian으로-수정하세요.">Q2. <code>poptotal(전체 인구)</code> 변수를 <code>total</code>로, <code>popasian(아시아 인구)</code> 변수를 <code>asian</code>으로 수정하세요.</h3>
-<div id="d18326a1" class="cell" data-execution_count="7">
+<div id="80d5a3a3" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df_mw <span class="op">=</span> df_mw.rename(columns <span class="op">=</span> {<span class="st">'poptotal'</span> : <span class="st">'total'</span>})</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df_mw <span class="op">=</span> df_mw.rename(columns <span class="op">=</span> {<span class="st">'popasian'</span> : <span class="st">'asian'</span>})</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -526,7 +526,7 @@ Name: asian, Length: 437, dtype: int64</code></pre>
 </section>
 <section id="q3.-total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요." class="level3">
 <h3 class="anchored" data-anchor-id="q3.-total-asian-변수를-이용해-전체-인구-대비-아시아-인구-백분율-파생변수를-추가하고-히스토그램을-만들어-분포를-살펴보세요.">Q3. <code>total</code>, <code>asian</code> 변수를 이용해 ‘전체 인구 대비 아시아 인구 백분율’ 파생변수를 추가하고, 히스토그램을 만들어 분포를 살펴보세요.</h3>
-<div id="ca5da641" class="cell" data-execution_count="8">
+<div id="a418e0f0" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_mw[<span class="st">'per_asian'</span>] <span class="op">=</span> (df_mw[<span class="st">'asian'</span>] <span class="op">/</span> df_mw[<span class="st">'total'</span>]) <span class="op">*</span> <span class="dv">100</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_mw)</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -597,7 +597,7 @@ Name: asian, Length: 437, dtype: int64</code></pre>
 </section>
 <section id="q4.-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요." class="level3">
 <h3 class="anchored" data-anchor-id="q4.-아시아-인구-백분율-전체-평균을-구하고-평균을-초과하면-large-그-외에는-small을-부여한-파생변수를-만들어-보세요.">Q4. 아시아 인구 백분율 전체 평균을 구하고, 평균을 초과하면 <code>large</code>, 그 외에는 <code>small</code>을 부여한 파생변수를 만들어 보세요.</h3>
-<div id="f1815939" class="cell" data-execution_count="9">
+<div id="27202f35" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>per_asian_mean <span class="op">=</span> df_mw[<span class="st">'per_asian'</span>].mean()</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(per_asian_mean)</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -664,7 +664,7 @@ Name: asian, Length: 437, dtype: int64</code></pre>
 </section>
 <section id="q5.-large와-small에-해당하는-지역이-얼마나-많은지-빈도표와-빈도-막대-그래프를-만들어-확인해-보세요." class="level3">
 <h3 class="anchored" data-anchor-id="q5.-large와-small에-해당하는-지역이-얼마나-많은지-빈도표와-빈도-막대-그래프를-만들어-확인해-보세요.">Q5. <code>large</code>와 <code>small</code>에 해당하는 지역이 얼마나 많은지 빈도표와 빈도 막대 그래프를 만들어 확인해 보세요.</h3>
-<div id="3a014501" class="cell" data-execution_count="10">
+<div id="84792082" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 빈도표</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df_mw[<span class="st">'SmallLarge'</span>].value_counts()</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
