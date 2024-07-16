@@ -1,9 +1,6 @@
 ---
-title: "About me, Dakyung."
+title: "Project"
 jupyter: python3
 ---
 
-* **Call me** : Summer
-* **I'm** : OO yo
-* **I live** : in Seoul
-* **I'm studying** : Data Sience
+> My recent projects below.

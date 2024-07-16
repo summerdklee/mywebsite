@@ -1,13 +1,18 @@
 ---
 title: "Hello! I'm Dakyung Lee."
-jupyter: python3
+toc: false
+about:
+    id: hero-heading
+    template: jolla
+    image: dk.lee.jpg
+    links: 
+      - icon: linkedin
+        text: Linkedin
+        href: https://www.linkedin.com/in/dklee218/
+      - icon: github
+        text: Github
+        href: https://github.com/summerdklee
 ---
-
-### Weolcome! 🙂
-
-##### Thanks for visiting my portfolio website.
-##### Please enjoy! (..◜ᴗ◝..)
-
-```{python}
-1 + 1
-```
+##### Thanks for visiting my portfolio.
+##### Please enjoy!
+##### (..◜ᴗ◝..)

@@ -1,9 +1,8 @@
 ---
-title: "LEC5 - HW1"
+title: "HW - LS BigData School"
 jupyter: python3
 ---
-
-# 84p
+## 84p
 
 ### Q1. 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.
 ```{python}
@@ -24,7 +23,7 @@ price_mean
 sales_mean
 ```
 
-# 115p
+## 115p
 
 ### Q1. mpg 데이터를 불러와 복사본을 만드세요.
 ```{python}
@@ -47,7 +46,7 @@ df_mpg_new.head()
 
 ```
 
-# 130p
+## 130p
 
 ### Q1. `midwest.csv`를 불러와 데이터의 특징을 파악하세요.
 ```{python}
