@@ -12,6 +12,9 @@ about:
       - icon: github
         text: Github
         href: https://github.com/summerdklee
+      - icon: google
+        text: E-mail
+        href: leedakyung218@gmail.com
 ---
 ##### Thanks for visiting my portfolio.
 ##### Please enjoy!
