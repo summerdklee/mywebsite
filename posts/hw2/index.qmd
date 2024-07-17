@@ -1,5 +1,7 @@
 ---
 title: "HW2 - LS BigData School"
+author: "Dakyung Lee"
+date: "2024-07-16"
 jupyter: python3
 ---
 ## 144p
@@ -9,7 +11,7 @@ jupyter: python3
 import pandas as pd
 import numpy as np
 
-mpg = pd.read_csv('data/mpg.csv')
+mpg = pd.read_csv('../data/mpg.csv')
 
 low_displ = mpg.query('displ <= 4')
 high_displ = mpg.query('displ >= 5')

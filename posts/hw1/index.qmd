@@ -1,7 +1,10 @@
 ---
 title: "HW1 - LS BigData School"
+author: "Dakyung Lee"
+date: "2024-07-15"
 jupyter: python3
 ---
+
 ## 84p
 
 ### Q1. 다음 표의 내용을 데이터 프레임으로 만들어 출력해 보세요.
@@ -50,7 +53,7 @@ df_mpg_new.head()
 
 ### Q1. `midwest.csv`를 불러와 데이터의 특징을 파악하세요.
 ```{python}
-df_mw = pd.read_csv('data/midwest.csv')
+df_mw = pd.read_csv('../data/midwest.csv')
 
 df_mw.info()
 df_mw.head()
