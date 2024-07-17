@@ -12,8 +12,7 @@ website:
         text: About
       - href: blog.qmd
         text: Blog
-      - hw1.qmd
-      - hw2.qmd
+
 
 format:
   html:
