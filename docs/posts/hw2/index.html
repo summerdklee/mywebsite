@@ -9,7 +9,7 @@
 <meta name="author" content="Dakyung Lee">
 <meta name="dcterms.date" content="2024-07-16">
 
-<title>🍀 - HW2 - LS BigData School</title>
+<title>🍀 - HW2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -104,10 +104,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
 
-
-
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
-
 
 
 <link rel="stylesheet" href="../../styles.css">
@@ -136,16 +133,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../about.html"> 
-<span class="menu-text">About</span></a>
+<span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
-  <li class="dropdown-header">
- <span class="menu-text">hw1.qmd</span></li>
-  <li class="dropdown-header">
- <span class="menu-text">hw2.qmd</span></li>
 </ul>
           </div> <!-- /navcollapse -->
           <div class="quarto-navbar-tools">
@@ -157,7 +150,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">HW2 - LS BigData School</h1>
+      <h1 class="title">HW2</h1>
                       </div>
   </div>
     
@@ -221,7 +214,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="p">144p</h2>
 <section id="q1.-자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요." class="level3">
 <h3 class="anchored" data-anchor-id="q1.-자동차-배기량에-따라-고속도로-연비가-다른지-알아보려고-합니다.-displ배기량이-4-이하인-자동차와-5-이상인-자동차-중-어떤-자동차의-hwy고속도로-연비-평균이-더-높은지-알아보세요.">Q1. 자동차 배기량에 따라 고속도로 연비가 다른지 알아보려고 합니다. <code>displ(배기량)</code>이 4 이하인 자동차와 5 이상인 자동차 중 어떤 자동차의 <code>hwy(고속도로 연비)</code> 평균이 더 높은지 알아보세요.</h3>
-<div id="f16b1601" class="cell" data-execution_count="1">
+<div id="01c278c4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -232,30 +225,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>low_displ[<span class="st">'hwy'</span>].mean()</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>high_displ[<span class="st">'hwy'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>np.float64(18.07894736842105)</code></pre>
 </div>
 </div>
 </section>
 <section id="q2.-자동차-제조-회사에-따른-도시-연비가-어떻게-다른지-알아보려고-합니다.-audi와-toyota-중-어느-manufacturer자동차-제조-회사의-cty도시-연비-평균이-더-높은지-알아보세요." class="level3">
 <h3 class="anchored" data-anchor-id="q2.-자동차-제조-회사에-따른-도시-연비가-어떻게-다른지-알아보려고-합니다.-audi와-toyota-중-어느-manufacturer자동차-제조-회사의-cty도시-연비-평균이-더-높은지-알아보세요.">Q2. 자동차 제조 회사에 따른 도시 연비가 어떻게 다른지 알아보려고 합니다. <code>audi</code>와 <code>toyota</code> 중 어느 <code>manufacturer(자동차 제조 회사)</code>의 <code>cty(도시 연비)</code> 평균이 더 높은지 알아보세요.</h3>
-<div id="9dd9984d" class="cell" data-execution_count="2">
+<div id="508c5a1c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>audi <span class="op">=</span> mpg.query(<span class="st">'manufacturer == "audi"'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>toyota <span class="op">=</span> mpg.query(<span class="st">'manufacturer == "toyota"'</span>)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>audi[<span class="st">'cty'</span>].mean()</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>toyota[<span class="st">'cty'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="2">
+<div class="cell-output cell-output-display" data-execution_count="10">
 <pre><code>np.float64(18.529411764705884)</code></pre>
 </div>
 </div>
 </section>
 <section id="q3.-chevrolet-ford-honda-자동차의-고속도로-연비-평균을-알아보려고-합니다.-세-회사의-데이터를-추출한-다음-hwy-전체-평균을-구해-보세요." class="level3">
 <h3 class="anchored" data-anchor-id="q3.-chevrolet-ford-honda-자동차의-고속도로-연비-평균을-알아보려고-합니다.-세-회사의-데이터를-추출한-다음-hwy-전체-평균을-구해-보세요.">Q3. <code>chevrolet</code>, <code>ford</code>, <code>honda</code> 자동차의 고속도로 연비 평균을 알아보려고 합니다. 세 회사의 데이터를 추출한 다음 <code>hwy</code> 전체 평균을 구해 보세요.</h3>
-<div id="61416f74" class="cell" data-execution_count="3">
+<div id="3e0f84f0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>cfh <span class="op">=</span> mpg.query(<span class="st">'manufacturer in ["chevrolet", "ford", "honda"]'</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>cfh[<span class="st">'hwy'</span>].mean()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
+<div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>np.float64(22.50943396226415)</code></pre>
 </div>
 </div>
@@ -265,10 +258,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="p-1">153p</h2>
 <section id="q1.-audi에서-생성한-자동차-중에-어떤-자동차-모델의-hwy고속도로-연비가-높은지-알아보려고-합니다.-audi에서-생산한-자동차-중-hwy가-15위에-해당하는-자동차의-데이터를-출력하세요." class="level3">
 <h3 class="anchored" data-anchor-id="q1.-audi에서-생성한-자동차-중에-어떤-자동차-모델의-hwy고속도로-연비가-높은지-알아보려고-합니다.-audi에서-생산한-자동차-중-hwy가-15위에-해당하는-자동차의-데이터를-출력하세요.">Q1. <code>audi</code>에서 생성한 자동차 중에 어떤 자동차 모델의 <code>hwy(고속도로 연비)</code>가 높은지 알아보려고 합니다. <code>audi</code>에서 생산한 자동차 중 <code>hwy</code>가 1~5위에 해당하는 자동차의 데이터를 출력하세요.</h3>
-<div id="8d9b3afa" class="cell" data-execution_count="4">
+<div id="e30380ad" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># audi = mpg.query('manufacturer == "audi"')</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>audi.sort_values(<span class="st">'hwy'</span>, ascending <span class="op">=</span> <span class="va">False</span>).head()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="4">
+<div class="cell-output cell-output-display" data-execution_count="12">
 <div>
 
 
@@ -372,13 +365,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="p-2">158p</h2>
 <section id="q1.-mpg-데이터-복사본을-만들고-cty와-hwy를-더한-합산-연비-변수를-추가하세요." class="level3">
 <h3 class="anchored" data-anchor-id="q1.-mpg-데이터-복사본을-만들고-cty와-hwy를-더한-합산-연비-변수를-추가하세요.">Q1. <code>mpg</code> 데이터 복사본을 만들고, <code>cty</code>와 <code>hwy</code>를 더한 ’합산 연비 변수’를 추가하세요.</h3>
-<div id="b6696bb3" class="cell" data-execution_count="5">
+<div id="d8f604cc" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>mpg_cp <span class="op">=</span> mpg.copy()</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>mpg_cp <span class="op">=</span> mpg_cp.assign(ch_sum <span class="op">=</span> mpg_cp[<span class="st">'cty'</span>] <span class="op">+</span> mpg_cp[<span class="st">'hwy'</span>]) <span class="co"># 혹은 mpg_cp['ch_sum'] = (mpg_cp['cty'] + mpg_cp['hwy'])</span></span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>mpg_cp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="5">
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -576,11 +569,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="q2.-앞에서-만든-합산-연비-변수를-2로-나눠-평균-연비-변수를-추가하세요." class="level3">
 <h3 class="anchored" data-anchor-id="q2.-앞에서-만든-합산-연비-변수를-2로-나눠-평균-연비-변수를-추가하세요.">Q2. 앞에서 만든 ’합산 연비 변수’를 2로 나눠 ’평균 연비 변수’를 추가하세요.</h3>
-<div id="3aadfc00" class="cell" data-execution_count="6">
+<div id="559b42cd" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mpg_cp <span class="op">=</span> mpg_cp.assign(ch_mean <span class="op">=</span> mpg_cp[<span class="st">'ch_sum'</span>] <span class="op">/</span> <span class="dv">2</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>mpg_cp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
 
@@ -790,9 +783,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="q3.-평균-연비-변수가-가장-높은-자동차-3종의-데이터를-출력하세요." class="level3">
 <h3 class="anchored" data-anchor-id="q3.-평균-연비-변수가-가장-높은-자동차-3종의-데이터를-출력하세요.">Q3. ’평균 연비 변수’가 가장 높은 자동차 3종의 데이터를 출력하세요.</h3>
-<div id="4558c83b" class="cell" data-execution_count="7">
+<div id="1770976d" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>mpg_cp.sort_values(<span class="st">'ch_mean'</span>, ascending <span class="op">=</span> <span class="va">False</span>).head(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 
@@ -873,14 +866,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="q4.-13번-문제를-해결할-수-있는-하나로-연결된-pandas-구문을-만들어-실행해-보세요.-데이터는-복사본-대신-mpg-원본을-이용하세요." class="level3">
 <h3 class="anchored" data-anchor-id="q4.-13번-문제를-해결할-수-있는-하나로-연결된-pandas-구문을-만들어-실행해-보세요.-데이터는-복사본-대신-mpg-원본을-이용하세요.">Q4. 1~3번 문제를 해결할 수 있는 하나로 연결된 <code>pandas</code> 구문을 만들어 실행해 보세요. 데이터는 복사본 대신 <code>mpg</code> 원본을 이용하세요.</h3>
-<div id="3a7c216c" class="cell" data-execution_count="8">
+<div id="2b69b96d" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mpg <span class="op">=</span> mpg.assign(ch_sum <span class="op">=</span> <span class="kw">lambda</span> x: x[<span class="st">'cty'</span>] <span class="op">+</span> x[<span class="st">'hwy'</span>],</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>                 ch_mean <span class="op">=</span> <span class="kw">lambda</span> x: x[<span class="st">'ch_sum'</span>] <span class="op">/</span> <span class="dv">2</span>) <span class="op">\</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>         .sort_values(<span class="st">'ch_mean'</span>, ascending <span class="op">=</span> <span class="va">False</span>) <span class="op">\</span></span>
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>         .head(<span class="dv">3</span>)</span>
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>mpg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="16">
 <div>
 
 

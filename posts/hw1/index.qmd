@@ -1,5 +1,5 @@
 ---
-title: "HW1 - LS BigData School"
+title: "HW1"
 author: "Dakyung Lee"
 date: "2024-07-15"
 jupyter: python3
