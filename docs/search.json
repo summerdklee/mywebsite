@@ -173,5 +173,33 @@
     "title": "HW3",
     "section": "211p",
     "text": "211p\n\nQ1. 어떤 회사에서 생산한 'suv'차종의 도시 연비가 높은지 알아보려고 합니다. 'suv'차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nmpg = pd.read_csv('../data/mpg.csv')\n\ndf_mpg = mpg.query('category == \"suv\"') \\\n            .groupby('model', as_index = False) \\\n            .agg(suv_cty_mean = ('cty', 'mean')) \\\n            .sort_values('suv_cty_mean', ascending = False)[0:5]\n            \nsns.barplot(data = df_mpg, x = 'model', y = 'suv_cty_mean', hue = 'model')\n\n\n\n\n\n\n\n\n\n\nQ2. 자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\ndf_mpg2 = mpg.groupby('category', as_index = False) \\\n             .agg(category_count = ('category', 'count')) \\\n             .sort_values('category_count', ascending = False)\n            \nsns.barplot(data = df_mpg2, x = 'category', y = 'category_count', hue = 'category')"
+  },
+  {
+    "objectID": "posts/hw3/index.html#산점도",
+    "href": "posts/hw3/index.html#산점도",
+    "title": "HW3",
+    "section": "산점도",
+    "text": "산점도\n\nx축은 displ, y축은 hwy를 나타낸 산점도 만들기\n\n\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n\nmpg = pd.read_csv('../data/mpg.csv')\n\nsns.scatterplot(data = mpg, x = 'displ', y = 'hwy')\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\nx축 범위를 3~6, y축 범위를 10~30으로 제한해 산점도 업데이트\n\n\nsns.scatterplot(data = mpg, x = 'displ', y = 'hwy') \\\n   .set(xlim = [3, 6], ylim = [10, 30])\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\ndrv별로 표식 색깔 다르게 표현\n\n\nsns.scatterplot(data = mpg, x = 'displ', y = 'hwy', hue = 'drv')\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw3/index.html#막대-그래프",
+    "href": "posts/hw3/index.html#막대-그래프",
+    "title": "HW3",
+    "section": "막대 그래프",
+    "text": "막대 그래프\n\n집단별 평균표를 만들고, 막대 그래프 만들기\n\n\ndf_mpg = mpg.groupby('drv', as_index = False) \\\n   .agg(mean_hwy = ('hwy', 'mean'))\ndf_mpg\n\nsns.barplot(data = df_mpg, x = 'drv', y = 'mean_hwy', hue = 'drv')\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n크기 순으로 정렬하여 막대 그래프 업데이트\n\n\ndf_mpg = df_mpg.sort_values('mean_hwy', ascending = False)\nsns.barplot(data = df_mpg, x = 'drv', y = 'mean_hwy', hue = 'drv')\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n집단별 빈도표를 만들고, 막대 그래프 만들기\n\n\ndf_mpg = mpg.groupby('drv', as_index = False) \\\n            .agg(n = ('drv', 'count'))\nsns.barplot(data = df_mpg, x = 'drv', y = 'n', hue = 'drv')\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n.countplot()으로 빈도 막대 그래프 만들기\n\n.barplot()과의 차이: countplot()은 별도로 빈도표를 만드는 작업이 필요하지 않다.\n\n\n\nsns.countplot(data = mpg, x = 'drv', hue = 'drv')\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;"
+  },
+  {
+    "objectID": "posts/hw3/index.html#plotly-산점도",
+    "href": "posts/hw3/index.html#plotly-산점도",
+    "title": "HW3",
+    "section": "Plotly 산점도",
+    "text": "Plotly 산점도\n\n산점도 만들기\n\n\nimport plotly.express as px\npx.scatter(data_frame = mpg, x = 'cty', y = 'hwy', color = 'drv')"
+  },
+  {
+    "objectID": "posts/hw3/index.html#plotly-막대-그래프",
+    "href": "posts/hw3/index.html#plotly-막대-그래프",
+    "title": "HW3",
+    "section": "Plotly 막대 그래프",
+    "text": "Plotly 막대 그래프\n** 자동차 종류별 빈도를 구하고, 막대 그래프 만들기\n\ndf = mpg.groupby('category', as_index = False) \\\n        .agg(n = ('category', 'count'))\n\npx.bar(data_frame = df, x = 'category', y = 'n', color = 'category')"
   }
 ]
