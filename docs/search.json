@@ -88,7 +88,7 @@
     "href": "blog.html",
     "title": "LS BigData School",
     "section": "",
-    "text": "HW2\n\n\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\n\n\n\n\n\n\nHW1\n\n\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\nNo matching items"
+    "text": "HW3\n\n\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\n\n\n\n\n\n\nHW2\n\n\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\n\n\n\n\n\n\nHW1\n\n\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hw1/index.html",
@@ -152,5 +152,26 @@
     "title": "Project",
     "section": "",
     "text": "My recent projects below."
+  },
+  {
+    "objectID": "posts/hw3/index.html",
+    "href": "posts/hw3/index.html",
+    "title": "HW3",
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\nimport seaborn as sns\nimport matplotlib as plt\n\nmpg = pd.read_csv('../data/mpg.csv')\nsns.scatterplot(data = mpg, x = 'cty', y = 'hwy', hue = 'cty')\n\n\n\n\n\n\n\n\n\n\n\n\nmidwest = pd.read_csv('../data/midwest.csv')\nsns.scatterplot(data = midwest, x = 'poptotal', y = 'popasian', hue = 'poptotal') \\\n   .set(xlim = [0, 500000], ylim = [0, 10000])"
+  },
+  {
+    "objectID": "posts/hw3/index.html#p",
+    "href": "posts/hw3/index.html#p",
+    "title": "HW3",
+    "section": "",
+    "text": "import pandas as pd\nimport numpy as np\nimport seaborn as sns\nimport matplotlib as plt\n\nmpg = pd.read_csv('../data/mpg.csv')\nsns.scatterplot(data = mpg, x = 'cty', y = 'hwy', hue = 'cty')\n\n\n\n\n\n\n\n\n\n\n\n\nmidwest = pd.read_csv('../data/midwest.csv')\nsns.scatterplot(data = midwest, x = 'poptotal', y = 'popasian', hue = 'poptotal') \\\n   .set(xlim = [0, 500000], ylim = [0, 10000])"
+  },
+  {
+    "objectID": "posts/hw3/index.html#p-1",
+    "href": "posts/hw3/index.html#p-1",
+    "title": "HW3",
+    "section": "211p",
+    "text": "211p\n\nQ1. 어떤 회사에서 생산한 'suv'차종의 도시 연비가 높은지 알아보려고 합니다. 'suv'차종을 대상으로 cty(도시 연비) 평균이 가장 높은 회사 다섯 곳을 막대 그래프로 표현해 보세요. 막대는 연비가 높은 순으로 정렬하세요.\n\nmpg = pd.read_csv('../data/mpg.csv')\n\ndf_mpg = mpg.query('category == \"suv\"') \\\n            .groupby('model', as_index = False) \\\n            .agg(suv_cty_mean = ('cty', 'mean')) \\\n            .sort_values('suv_cty_mean', ascending = False)[0:5]\n            \nsns.barplot(data = df_mpg, x = 'model', y = 'suv_cty_mean', hue = 'model')\n\n\n\n\n\n\n\n\n\n\nQ2. 자동차 중에 어떤 category(자동차 종류)가 많은지 알아보려고 합니다. sns.barplot()을 이용해 자동차 종류별 빈도를 표현한 막대 그래프를 만들어 보세요. 막대는 빈도가 높은 순으로 정렬하세요.\n\ndf_mpg2 = mpg.groupby('category', as_index = False) \\\n             .agg(category_count = ('category', 'count')) \\\n             .sort_values('category_count', ascending = False)\n            \nsns.barplot(data = df_mpg2, x = 'category', y = 'category_count', hue = 'category')"
   }
 ]
