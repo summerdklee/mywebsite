@@ -1,0 +1,68 @@
+---
+title: "HW4"
+author: "Dakyung Lee"
+date: "2024-07-25"
+jupyter: python3
+---
+### Q1. 정규분포의 확률밀도함수(pdf) 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3 / sigma = 2의 pdf를 그리시오. (단, scipy norm 함수는 사용하지 말 것)
+```{python}
+import math
+import numpy as np
+import matplotlib.pyplot as plt
+
+def pdf(x, mu, sig):
+    a = 1 / (sig * np.sqrt(2 * np.pi))
+    b = np.exp((-0.5 * ((x - mu) / sig)) ** 2 )
+    return a ** b
+
+k = np.linspace(-4, 10, 100)
+y = pdf(k, 3, 2)
+
+plt.plot(k, y)
+plt.show()
+plt.clf()
+
+```
+
+
+### Q2. 파이썬 scipy 패키지를 사용해서 다음과 같은 확률을 구하시오.
+* **X ~ N(2, 3^2)**
+1) **P(X < 3)**
+```{python}
+from scipy.stats import norm
+
+norm.cdf(3, loc = 2, scale = 3)
+
+```
+
+
+2) **P(2 < X < 5)**
+```{python}
+
+a = norm.cdf(2, loc = 2, scale = 3)
+b = norm.cdf(5, loc = 2, scale = 3)
+
+b - a
+
+```
+
+3) **P(X < 3 or X > 7)**
+```{python}
+
+c = norm.cdf(3, loc = 2, scale = 3)
+d = 1 - norm.cdf(7, loc = 2, scale = 3)
+
+c + d
+
+```
+
+### Q3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다. 상위 5%에 해당하는 학생의 점수는?
+```{python}
+# 퀀타일 함수 (ppf)
+
+## mu = 30
+## sig = 2
+norm.ppf(0.95, 30, 2)
+
+```
+
