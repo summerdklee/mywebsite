@@ -195,7 +195,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="q1.-균일분포-3-7에서-20개의-표본-뽑기-10000개-사용" class="level3">
 <h3 class="anchored" data-anchor-id="q1.-균일분포-3-7에서-20개의-표본-뽑기-10000개-사용">Q1. # 균일분포 (3, 7)에서 20개의 표본 뽑기 (10000개 사용)</h3>
-<div id="7dd1a40f" class="cell" data-execution_count="1">
+<div id="2f5288c4" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
@@ -203,32 +203,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> uniform.rvs(loc<span class="op">=</span><span class="dv">3</span>, scale<span class="op">=</span><span class="dv">4</span>, size<span class="op">=</span><span class="dv">20</span><span class="op">*</span><span class="dv">10000</span>).reshape(<span class="op">-</span><span class="dv">1</span>,<span class="dv">20</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-display" data-execution_count="3">
-<pre><code>array([[6.89406636, 6.89251139, 4.58792761, ..., 6.59484514, 6.17457536,
-        5.89277154],
-       [6.71093393, 5.128036  , 5.54966523, ..., 6.66913527, 5.2198036 ,
-        3.64623106],
-       [5.18967158, 3.05532494, 5.80565646, ..., 5.8605061 , 4.35811335,
-        4.3093106 ],
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>array([[5.47072584, 4.25411569, 5.08487914, ..., 6.90816282, 5.0888124 ,
+        3.48907393],
+       [5.46903757, 6.8892847 , 5.35590862, ..., 3.24906697, 5.51463388,
+        6.10799538],
+       [4.95959669, 3.04239132, 6.97681011, ..., 4.73582811, 6.50780201,
+        3.15977979],
        ...,
-       [6.10802224, 6.10370235, 4.8720008 , ..., 4.10940716, 5.65118134,
-        5.05513686],
-       [3.10157275, 4.44838817, 5.26333291, ..., 5.9237748 , 6.10311529,
-        3.09083469],
-       [6.96781872, 6.2192121 , 4.18465829, ..., 6.42668725, 5.38916413,
-        6.74742695]])</code></pre>
+       [6.02732873, 3.97745429, 4.05402356, ..., 5.31730024, 3.07032192,
+        3.38317704],
+       [3.763338  , 5.45393809, 6.51928928, ..., 6.60840044, 6.83475579,
+        4.81617092],
+       [5.68571741, 6.08774942, 3.97172105, ..., 4.51710289, 3.14220876,
+        5.72266615]])</code></pre>
 </div>
 </div>
 </section>
 <section id="q2.-n-1로-나눈-것을-s_2-으로-정의하고-모분산-위치에-녹색-막대-추가하기." class="level3">
 <h3 class="anchored" data-anchor-id="q2.-n-1로-나눈-것을-s_2-으로-정의하고-모분산-위치에-녹색-막대-추가하기.">Q2. n-1로 나눈 것을 s_2 으로 정의하고 모분산 위치에 녹색 막대 추가하기.</h3>
-<ul>
-<li><strong>X ~ N(2, 3^2)</strong></li>
-</ul>
-<ol type="1">
-<li><strong>P(X &lt; 3)</strong></li>
-</ol>
-<div id="ce17e723" class="cell" data-execution_count="2">
+<div id="db3035de" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>s_2 <span class="op">=</span> x.var(axis <span class="op">=</span> <span class="dv">1</span>, ddof <span class="op">=</span> <span class="dv">1</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>s_2</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
