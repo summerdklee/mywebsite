@@ -1,0 +1,34 @@
+---
+title: "HW5"
+author: "Dakyung Lee"
+date: "2024-07-29"
+jupyter: python3
+---
+### Q1. # 균일분포 (3, 7)에서 20개의 표본 뽑기 (10000개 사용) 
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+from scipy.stats import uniform
+
+x = uniform.rvs(loc=3, scale=4, size=20*10000).reshape(-1,20)
+x
+
+```
+
+### Q2. n-1로 나눈 것을 s_2 으로 정의하고 모분산 위치에 녹색 막대 추가하기.
+* **X ~ N(2, 3^2)**
+1) **P(X < 3)**
+```{python}
+s_2 = x.var(axis = 1, ddof = 1)
+s_2
+
+sns.histplot(s_2)
+plt.axvline(x.var(), color="green", linewidth = 2)
+plt.show()
+plt.clf()
+
+```
+
+### Q3. 왜 n-1을 사용하는 것이 더 타당한지?
+* 분모를 `n-1`로 가진 그래프가 모분산에 더 근접한 결과를 보이기 때문에

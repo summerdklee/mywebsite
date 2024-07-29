@@ -88,7 +88,7 @@
     "href": "blog.html",
     "title": "LS BigData School",
     "section": "",
-    "text": "HW4\n\n\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\n\n\n\n\n\n\nTEAM PROJECT 1\n\n\n\n\n\n\n\n\n\n\n\nJul 24, 2024\n\n\n5조(내이름은코난탐정이조)\n\n\n\n\n\n\n\n\n\n\n\n\nHW3\n\n\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\n\n\n\n\n\n\nHW2\n\n\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\n\n\n\n\n\n\nHW1\n\n\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\nNo matching items"
+    "text": "HW5\n\n\n\n\n\n\n\n\n\n\n\nJul 29, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\n\n\n\n\n\n\nHW4\n\n\n\n\n\n\n\n\n\n\n\nJul 25, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\n\n\n\n\n\n\nTEAM PROJECT 1\n\n\n\n\n\n\n\n\n\n\n\nJul 24, 2024\n\n\n5조(내이름은코난탐정이조)\n\n\n\n\n\n\n\n\n\n\n\n\nHW3\n\n\n\n\n\n\n\n\n\n\n\nJul 22, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\n\n\n\n\n\n\nHW2\n\n\n\n\n\n\n\n\n\n\n\nJul 16, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\n\n\n\n\n\n\nHW1\n\n\n\n\n\n\n\n\n\n\n\nJul 15, 2024\n\n\nDakyung Lee\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hw1/index.html",
@@ -229,5 +229,12 @@
     "title": "HW4",
     "section": "",
     "text": "Q1. 정규분포의 확률밀도함수(pdf) 값을 계산하는 자신만의 파이썬 함수를 정의하고, 정규분포 mu = 3 / sigma = 2의 pdf를 그리시오. (단, scipy norm 함수는 사용하지 말 것)\n\nimport math\nimport numpy as np\nimport matplotlib.pyplot as plt\n\ndef pdf(x, mu, sig):\n    a = 1 / (sig * np.sqrt(2 * np.pi))\n    b = np.exp((-0.5 * ((x - mu) / sig)) ** 2 )\n    return a ** b\n\nk = np.linspace(-4, 10, 100)\ny = pdf(k, 3, 2)\n\nplt.plot(k, y)\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n\nQ2. 파이썬 scipy 패키지를 사용해서 다음과 같은 확률을 구하시오.\n\nX ~ N(2, 3^2)\n\n\nP(X &lt; 3)\n\n\nfrom scipy.stats import norm\n\nnorm.cdf(3, loc = 2, scale = 3)\n\nnp.float64(0.6305586598182363)\n\n\n\nP(2 &lt; X &lt; 5)\n\n\na = norm.cdf(2, loc = 2, scale = 3)\nb = norm.cdf(5, loc = 2, scale = 3)\n\nb - a\n\nnp.float64(0.3413447460685429)\n\n\n\nP(X &lt; 3 or X &gt; 7)\n\n\nc = norm.cdf(3, loc = 2, scale = 3)\nd = 1 - norm.cdf(7, loc = 2, scale = 3)\n\nc + d\n\nnp.float64(0.678349012091051)\n\n\n\n\nQ3. LS 빅데이터 스쿨 학생들의 중간고사 점수는 평균이 30이고, 분산이 4인 정규분포를 따른다. 상위 5%에 해당하는 학생의 점수는?\n\n# 퀀타일 함수 (ppf)\n\n## mu = 30\n## sig = 2\nnorm.ppf(0.95, 30, 2)\n\nnp.float64(33.28970725390295)"
+  },
+  {
+    "objectID": "posts/hw5/index.html",
+    "href": "posts/hw5/index.html",
+    "title": "HW5",
+    "section": "",
+    "text": "Q1. # 균일분포 (3, 7)에서 20개의 표본 뽑기 (10000개 사용)\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import uniform\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000).reshape(-1,20)\nx\n\narray([[6.89406636, 6.89251139, 4.58792761, ..., 6.59484514, 6.17457536,\n        5.89277154],\n       [6.71093393, 5.128036  , 5.54966523, ..., 6.66913527, 5.2198036 ,\n        3.64623106],\n       [5.18967158, 3.05532494, 5.80565646, ..., 5.8605061 , 4.35811335,\n        4.3093106 ],\n       ...,\n       [6.10802224, 6.10370235, 4.8720008 , ..., 4.10940716, 5.65118134,\n        5.05513686],\n       [3.10157275, 4.44838817, 5.26333291, ..., 5.9237748 , 6.10311529,\n        3.09083469],\n       [6.96781872, 6.2192121 , 4.18465829, ..., 6.42668725, 5.38916413,\n        6.74742695]])\n\n\n\n\nQ2. n-1로 나눈 것을 s_2 으로 정의하고 모분산 위치에 녹색 막대 추가하기.\n\nX ~ N(2, 3^2)\n\n\nP(X &lt; 3)\n\n\ns_2 = x.var(axis = 1, ddof = 1)\ns_2\n\nsns.histplot(s_2)\nplt.axvline(x.var(), color=\"green\", linewidth = 2)\nplt.show()\nplt.clf()\n\n\n\n\n\n\n\n\n&lt;Figure size 672x480 with 0 Axes&gt;\n\n\n\n\nQ3. 왜 n-1을 사용하는 것이 더 타당한지?\n\n분모를 n-1로 가진 그래프가 모분산에 더 근접한 결과를 보이기 때문에"
   }
 ]

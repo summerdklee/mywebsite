@@ -1,0 +1,12 @@
+{
+  "hash": "9038a9092fb65970081473c88c4323f9",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\ntitle: \"HW5\"\nauthor: \"Dakyung Lee\"\ndate: \"2024-07-29\"\njupyter: python3\n---\n\n### Q1. # 균일분포 (3, 7)에서 20개의 표본 뽑기 (10000개 사용) \n\n::: {#7dd1a40f .cell execution_count=1}\n``` {.python .cell-code}\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport seaborn as sns\nfrom scipy.stats import uniform\n\nx = uniform.rvs(loc=3, scale=4, size=20*10000).reshape(-1,20)\nx\n```\n\n::: {.cell-output .cell-output-display execution_count=3}\n```\narray([[6.89406636, 6.89251139, 4.58792761, ..., 6.59484514, 6.17457536,\n        5.89277154],\n       [6.71093393, 5.128036  , 5.54966523, ..., 6.66913527, 5.2198036 ,\n        3.64623106],\n       [5.18967158, 3.05532494, 5.80565646, ..., 5.8605061 , 4.35811335,\n        4.3093106 ],\n       ...,\n       [6.10802224, 6.10370235, 4.8720008 , ..., 4.10940716, 5.65118134,\n        5.05513686],\n       [3.10157275, 4.44838817, 5.26333291, ..., 5.9237748 , 6.10311529,\n        3.09083469],\n       [6.96781872, 6.2192121 , 4.18465829, ..., 6.42668725, 5.38916413,\n        6.74742695]])\n```\n:::\n:::\n\n\n### Q2. n-1로 나눈 것을 s_2 으로 정의하고 모분산 위치에 녹색 막대 추가하기.\n* **X ~ N(2, 3^2)**\n1) **P(X < 3)**\n\n::: {#ce17e723 .cell execution_count=2}\n``` {.python .cell-code}\ns_2 = x.var(axis = 1, ddof = 1)\ns_2\n\nsns.histplot(s_2)\nplt.axvline(x.var(), color=\"green\", linewidth = 2)\nplt.show()\nplt.clf()\n```\n\n::: {.cell-output .cell-output-display}\n![](index_files/figure-html/cell-3-output-1.png){width=593 height=411}\n:::\n\n::: {.cell-output .cell-output-display}\n```\n<Figure size 672x480 with 0 Axes>\n```\n:::\n:::\n\n\n### Q3. 왜 n-1을 사용하는 것이 더 타당한지?\n* 분모를 `n-1`로 가진 그래프가 모분산에 더 근접한 결과를 보이기 때문에\n\n",
+    "supporting": [
+      "index_files"
+    ],
+    "filters": [],
+    "includes": {}
+  }
+}
