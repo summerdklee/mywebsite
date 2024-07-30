@@ -1,0 +1,126 @@
+---
+title: "HW6"
+author: "Dakyung Lee"
+date: "2024-07-30"
+jupyter: python3
+---
+### 데이터 정제 및 기초 그래프 생성
+```{python}
+# 아래 순서는 기본 데이터 분석을 위한 준비 절차임
+# 0. 패키지 로드
+import pandas as pd
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+from scipy.stats import norm
+
+# 1. 데이터 로드
+raw_welfare = pd.read_spss('..\data\Koweps_hpwc14_2019_beta2.sav')
+welfare = raw_welfare.copy()
+
+# 2. 데이터 검토
+welfare.head()
+welfare.shape
+welfare.info()
+welfare.describe()
+
+# 3. 변수명 변경
+welfare = welfare.rename(
+    columns = {'h14_g3'     : 'sex',
+               'h14_g4'     : 'birth',
+               'h14_g10'    : 'marriage_type',
+               'h14_g11'    : 'religion',
+               'p1402_8aq1' : 'income',
+               'h14_eco9'   : 'code_job',
+               'h14_reg7'   : 'code_region'})
+               
+welfare = welfare[['sex', 'birth', 'marriage_type', 'religion', 'income', 'code_job', 'code_region']]
+welfare.head(20)
+welfare.shape
+
+# 아래 순서는 데이터 분석을 위한 데이터 전처리 절차임
+
+# [성별에 따른 월급 차이 - 성별에 따라 월급이 다를까?]
+# (1). 성별 변수 검토 및 전처리
+# 0. 변수 검토
+# 0-1. 변수 타입 파악
+welfare['sex'].dtypes # 변수 타입 파악
+
+# 0-2. 범주마다 몇 명이 있는지, 이상치 파악
+welfare['sex'].value_counts() 
+
+# 1. 데이터 전처리
+# 1-1. (이상치가 있다면) 이상치 결측 처리
+
+# 1-2. 이해하기 쉽도록 변수값 변경
+welfare['sex'] = np.where(welfare['sex'] == 1, 'male', 'female')
+welfare['sex'].value_counts()
+
+# 1-3. 빈도 막대 그래프 만들기
+#sns.countplot(data = welfare, x = 'sex', hue = 'sex')
+#plt.show()
+#plt.clf()
+
+# (2). 월급 변수 검토 및 전처리
+# 0. 변수 검토
+# 0-1. 변수 타입 파악
+welfare['income'].dtypes
+
+# 0-2. 요약 통계량 구하기
+welfare['income'].describe()
+
+# 0-3. 분포 확인
+#sns.histplot(data = welfare, x = 'income')
+#plt.show()
+#plt.clf()
+
+# 1. 데이터 전처리
+# 1-1. 이상치 확인, (이상치가 있다면) 이상치 결측 처리
+welfare['income'].describe()
+
+# 1-2. 결측치 확인
+welfare['income'].isna().sum()
+
+# 1-3. 성별 월급 평균표(요약표) 생성
+sex_income = welfare.dropna(subset = 'income') \
+                    .groupby('sex', as_index = False) \
+                    .agg(mean_income = ('income', 'mean'))
+sex_income
+
+# 1-4. 평균표 막대 그래프 생성
+sns.barplot(data = sex_income, x = 'sex', y = 'mean_income', hue = 'sex')
+plt.show()
+```
+
+
+### 95% 신뢰구간 그래프 생성
+```{python}
+# 여자 임금 테이블 생성
+female_income = welfare.dropna(subset = 'income') \
+                       .query('sex == "female"')[["sex", "income"]]
+                       
+# 남자 임금 테이블 생성
+male_income = welfare.dropna(subset = 'income') \
+                     .query('sex == "male"')[["sex", "income"]]
+
+# 신뢰구간 계산
+female_df = female_income.agg(female_mean = ('income', 'mean'),
+                              female_std = ('income', 'std'),
+                              female_n = ('income', 'count'))
+female_df = female_df.transpose()
+                       
+male_df = male_income.agg(male_mean = ('income', 'mean'),
+                          male_std = ('income', 'std'),
+                          male_n = ('income', 'count'))
+male_df = male_df.transpose()
+
+female_df['f_left_ci'] = female_df['female_mean'] - 1.96 * female_df['female_std'] / np.sqrt(female_df['female_n'])
+female_df['f_right_ci'] = female_df['female_mean'] + 1.96 * female_df['female_std'] / np.sqrt(female_df['female_n'])
+female_df.head()
+
+male_df['m_left_ci'] = male_df['male_mean'] - 1.96 * male_df['male_std'] / np.sqrt(male_df['male_n'])
+male_df['m_right_ci'] = male_df['male_mean'] + 1.96 * male_df['male_std'] / np.sqrt(male_df['male_n'])
+male_df.head()
+
+```
+
