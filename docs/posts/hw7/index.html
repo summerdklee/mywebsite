@@ -133,7 +133,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Project</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../blog.html"> 
+    <a class="nav-link" href="../../posts/index.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
 </ul>
@@ -203,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="검정통계량을-계산하시오." class="level3">
 <h3 class="anchored" data-anchor-id="검정통계량을-계산하시오.">검정통계량을 계산하시오.</h3>
-<div id="6d2cb3f4" class="cell" data-execution_count="1">
+<div id="40e8d742" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> scipy.stats <span class="im">import</span> t</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -224,7 +224,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="p-value를-구하시오." class="level3">
 <h3 class="anchored" data-anchor-id="p-value를-구하시오.">p-value를 구하시오.</h3>
-<div id="5ccf2e0f" class="cell" data-execution_count="2">
+<div id="45d476b5" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p_value <span class="op">=</span> t.cdf(t_value, df <span class="op">=</span> <span class="dv">14</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p_value)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -234,7 +234,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="슬통-자동차-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구하시오." class="level3">
 <h3 class="anchored" data-anchor-id="슬통-자동차-신형-모델의-평균-복합-에너지-소비효율에-대하여-95-신뢰구간을-구하시오.">슬통 자동차 신형 모델의 평균 복합 에너지 소비효율에 대하여 95% 신뢰구간을 구하시오.</h3>
-<div id="61e24a24" class="cell" data-execution_count="3">
+<div id="85fac1a1" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ci_1 <span class="op">=</span> x_bar <span class="op">-</span> t.ppf(<span class="fl">0.975</span>, df <span class="op">=</span> <span class="dv">14</span>) <span class="op">*</span> (sig <span class="op">/</span> np.sqrt(<span class="dv">15</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>ci_2 <span class="op">=</span> x_bar <span class="op">+</span> t.ppf(<span class="fl">0.975</span>, df <span class="op">=</span> <span class="dv">14</span>) <span class="op">*</span> (sig <span class="op">/</span> np.sqrt(<span class="dv">15</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ci_1)</span>
