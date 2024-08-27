@@ -257,5 +257,68 @@
     "title": "Recent posts",
     "section": "",
     "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\nNo.1 공인중개사\n\n\n\n\n\n\n\n\n\n\n\nHW7\n\n\n\nAug 5, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHW6\n\n\n\nJul 30, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHW5\n\n\n\nJul 29, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHW4\n\n\n\nJul 25, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nTEAM PROJECT 1\n\n\n\nJul 24, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHW3\n\n\n\nJul 22, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHW2\n\n\n\nJul 16, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nHW1\n\n\n\nJul 15, 2024\n\n\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/team_proj_2/index.html",
+    "href": "posts/team_proj_2/index.html",
+    "title": "No.1 공인중개사",
+    "section": "",
+    "text": "조원\n\n윤대웅, 이다경, 장일준, 정은서\n\n한 마디\n\n우린 멋져\n\n\n\n\n\n\n주제\n\nAmes 내 동네 선정 후 조건에 맞는 집 추천\n\n데이터\n\nKaggle\nSchool and Hospital"
+  },
+  {
+    "objectID": "posts/team_proj_2/index.html#sidebar",
+    "href": "posts/team_proj_2/index.html#sidebar",
+    "title": "No.1 공인중개사",
+    "section": "",
+    "text": "조원\n\n윤대웅, 이다경, 장일준, 정은서\n\n한 마디\n\n우린 멋져\n\n\n\n\n\n\n주제\n\nAmes 내 동네 선정 후 조건에 맞는 집 추천\n\n데이터\n\nKaggle\nSchool and Hospital"
+  },
+  {
+    "objectID": "posts/team_proj_2/index.html#row-1",
+    "href": "posts/team_proj_2/index.html#row-1",
+    "title": "No.1 공인중개사",
+    "section": "Row",
+    "text": "Row\n\n\n{'icon': 'geo-alt', 'color': 'primary', 'value': 28}\n\n\n\n\n{'icon': 'capsule', 'color': 'warning', 'value': 17}\n\n\n\n\n{'icon': 'mortarboard', 'color': 'info', 'value': 9}"
+  },
+  {
+    "objectID": "posts/team_proj_2/index.html#row-2",
+    "href": "posts/team_proj_2/index.html#row-2",
+    "title": "No.1 공인중개사",
+    "section": "Row",
+    "text": "Row"
+  },
+  {
+    "objectID": "posts/team_proj_2/index.html#row-3",
+    "href": "posts/team_proj_2/index.html#row-3",
+    "title": "No.1 공인중개사",
+    "section": "Row",
+    "text": "Row"
+  },
+  {
+    "objectID": "posts/team_proj_2/index.html#row-4",
+    "href": "posts/team_proj_2/index.html#row-4",
+    "title": "No.1 공인중개사",
+    "section": "Row",
+    "text": "Row\n\n\n\n\n\n순위\nNeighborhood\n중앙 위도\n중앙 경도\n최소 학교 거리 (미터)\n최소 병원 거리 (미터)\n평균 시설 거리 (미터)\n\n\n\n\n1\nNorthpark_Villa\n42.050382\n-93.625930\n203\n600\n401\n\n\n2\nNorth_Ames\n42.042354\n-93.617564\n339\n530\n435\n\n\n3\nBriardale\n42.052068\n-93.628443\n230\n876\n553\n\n\n4\nEdwards\n42.022039\n-93.666655\n1056\n61\n558\n\n\n5\nCollege_Creek\n42.019277\n-93.686823\n395\n767\n581"
+  },
+  {
+    "objectID": "posts/team_proj_2/index.html#row-5",
+    "href": "posts/team_proj_2/index.html#row-5",
+    "title": "No.1 공인중개사",
+    "section": "Row",
+    "text": "Row"
+  },
+  {
+    "objectID": "posts/team_proj_2/index.html#row-6",
+    "href": "posts/team_proj_2/index.html#row-6",
+    "title": "No.1 공인중개사",
+    "section": "Row",
+    "text": "Row"
+  },
+  {
+    "objectID": "posts/team_proj_2/index.html#row-7",
+    "href": "posts/team_proj_2/index.html#row-7",
+    "title": "No.1 공인중개사",
+    "section": "Row",
+    "text": "Row\n\n\n\n\n\nRank\nNeighborhood\nPrice\nScore\n\n\n\n\n1\nEdwards\n$415,000\n89\n\n\n2\nNorthpark Villa\n$200,000\n81\n\n\n3\nCollege Creek\n$475,000\n79\n\n\n4\nNorth Ames\n$143,000\n52\n\n\n5\nBriardale\n$125,000\n45"
   }
 ]
