@@ -1,0 +1,127 @@
+---
+title: "LEC1"
+author: "Dakyung Lee"
+date: "2024-09-10"
+jupyter: python3
+---
+
+```{python}
+import pandas as pd
+import numpy as np
+import statsmodels.api as sm
+from sklearn.metrics import confusion_matrix, accuracy_score, f1_score
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
+
+### Q1. 데이터를 로드하고, 로지스틱 회귀모델을 적합하고, 회귀 표를 작성하세요.
+```{python}
+data = pd.read_csv('../../data/leukemia_remission.csv')
+
+X = data[['CELL', 'SMEAR', 'INFIL', 'LI', 'BLAST', 'TEMP']]
+y = data['REMISS']
+
+X = sm.add_constant(X)
+
+logit_model = sm.Logit(y, X).fit()
+
+logit_summary = logit_model.summary()
+print(logit_summary)
+```
+
+### Q2. 해당 모델은 통계적으로 유의한가요? 그 이유를 검정통계량를 사용해서 설명하시오.
+```{python}
+print(f"Model p-value: {logit_model.llr_pvalue}")
+```
+
+### Q3. 유의수준이 0.2를 기준으로 통계적으로 유의한 변수는 몇개이며, 어느 변수 인가요?
+```{python}
+significant_vars = logit_model.pvalues[logit_model.pvalues < 0.2]
+print(f"Statistically significant variables: {significant_vars}")
+```
+
+### Q4. 다음 환자에 대한 오즈는 얼마인가요?
+
+* CELL (골수의 세포성): 65%
+
+* SMEAR (골수편의 백혈구 비율): 45%
+
+* INFIL (골수의 백혈병 세포 침투 비율): 55%
+
+* LI (골수 백혈병 세포의 라벨링 인덱스): 1.2
+
+* BLAST (말초혈액의 백혈병 세포 수): 1.1세포/μL
+
+* TEMP (치료 시작 전 최고 체온): 0.9CELL (골수의 세포성): 65%
+
+* SMEAR (골수편의 백혈구 비율): 45%
+
+* INFIL (골수의 백혈병 세포 침투 비율): 55%
+
+* LI (골수 백혈병 세포의 라벨링 인덱스): 1.2
+
+* BLAST (말초혈액의 백혈병 세포 수): 1.1세포/μL
+
+* TEMP (치료 시작 전 최고 체온): 0.9
+
+```{python}
+patient_values_updated = [1, 0.65, 0.45, 0.55, 1.2, 1.1, 0.9]
+log_odds_updated = sum([coef * val for coef, val in zip(logit_model.params, patient_values_updated)])
+odds_updated = np.exp(log_odds_updated)
+print(f"Odds: {odds_updated}")
+```
+
+### Q5. 위 환자의 혈액에서 백혈병 세포가 관측되지 않은 확률은 얼마인가요?
+```{python}
+probability_updated = 1 / (1 + np.exp(-log_odds_updated))
+print(f"Probability: {probability_updated}")
+```
+
+### Q6. TEMP 변수의 계수는 얼마이며, 해당 계수를 사용해서 TEMP 변수가 백혈병 치료에 대한 영향을 설명하시오.
+```{python}
+temp_coef = logit_model.params['TEMP']
+print(f"TEMP coefficient: {temp_coef}")
+```
+
+### Q7. CELL 변수의 99% 오즈비에 대한 신뢰구간을 구하시오.
+```{python}
+cell_coef = logit_model.params['CELL']
+cell_se = logit_model.bse['CELL']
+z_value_99 = 2.576  # Z-value for 99% confidence interval
+lower_bound_coef = cell_coef - z_value_99 * cell_se
+upper_bound_coef = cell_coef + z_value_99 * cell_se
+lower_bound_or = np.exp(lower_bound_coef)
+upper_bound_or = np.exp(upper_bound_coef)
+print(f"CELL 99% Confidence Interval for OR: ({lower_bound_or}, {upper_bound_or})")
+```
+
+### Q8. 주어진 데이터에 대하여 로지스틱 회귀 모델의 예측 확률을 구한 후, 50% 이상인 경우 1로 처리하여, 혼동 행렬를 구하시오.
+
+```{python}
+predicted_probs = logit_model.predict(X)
+predicted_classes = (predicted_probs >= 0.5).astype(int)
+conf_matrix = confusion_matrix(y, predicted_classes)
+print(f"Confusion Matrix:\n{conf_matrix}")
+
+plt.figure(figsize=(6, 4))
+sns.heatmap(conf_matrix, annot=True, fmt='d', cmap='Blues', cbar=False,
+            xticklabels=['Actual 0', 'Actual 1'], yticklabels=['Predicted 0', 'Predicted 1'])
+plt.title('Confusion Matrix')
+plt.xlabel('Actual')
+plt.ylabel('Predicted')
+plt.show()
+```
+
+### Q9. 해당 모델의 Accuracy는 얼마인가요?
+
+```{python}
+accuracy = accuracy_score(y, predicted_classes)
+print(f"Accuracy: {accuracy}")
+```
+
+### Q10. 해당 모델의 F1 Score를 구하세요.
+
+```{python}
+f1 = f1_score(y, predicted_classes)
+print(f"F1 Score: {f1}")
+```
